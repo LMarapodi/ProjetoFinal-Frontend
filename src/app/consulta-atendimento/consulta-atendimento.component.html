@@ -1,0 +1,44 @@
+<h5>Consulta de Atendimentos</h5>
+<hr />
+
+<div class="alert alert-success" role="alert" [hidden]="!mensagemSucessoExclusao">
+    <strong>{{mensagemSucessoExclusao}}</strong>
+    <button type="button" class="close" (click)="limparMensagemSucessoExclusao()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<table class="table table-bordered table-hover table-stripped">
+    <thead>
+
+        <tr>
+            <th>Local</th>
+            <th>Data</th>
+            <th>Observacoes</th>
+            <th>Medico</th>
+            <th>Especializacao</th>
+            <th>Paciente</th>
+            <th>Telefone</th>
+            <th>Operações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listagemDeAtendimentos">
+            <td>{{item.local}}</td>
+            <td>{{item.dataAtendimento}}</td>
+            <td>{{item.observacoes}}</td>
+            <td>{{item.medico.nome}}</td>
+            <td>{{item.medico.especializacao}}</td>
+            <td>{{item.paciente.nome}}</td>
+            <td>{{item.paciente.telefone}}</td>
+
+            <td width='225'>
+                <button class="btn btn-sm btn-primary mr-1" (click)="exibirAtendimento(item)"
+                    data-target="#janelaedicao" data-toggle="modal">
+                    Atualizar</button>
+                <button class="btn btn-sm btn-danger" (click)="excluirAtendimento(item.idAtendimento)">
+                    Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

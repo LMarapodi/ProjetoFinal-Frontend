@@ -1,0 +1,19 @@
+th{
+    background-color: gray;
+    text-align: center;
+    font-size: 23px;
+    color: white;
+    border: black solid 5px;
+}
+
+td{
+    text-align: center;
+    font-size: 18px;
+    border: black solid 3px;
+}
+
+h5{
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif; 
+}
